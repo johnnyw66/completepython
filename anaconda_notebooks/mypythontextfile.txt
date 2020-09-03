@@ -1,0 +1,11 @@
+Hello this is a text file - line1
+I hope this works - line2 
+If it does - line3
+If it does - line4
+If it does - line5
+If it does. - line6
+If it does - line7
+If it does - line8
+DOG, CAT 
+It's a miracle -
+This is the last line!!
