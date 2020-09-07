@@ -19,30 +19,45 @@ def calcBestScore(lst):
 #print(f"{scores}\n")
 #calcBestScore(scores)
 
-game = Game()
+
+def game_loop():
+
+	#print(game)
+	#game.hit(player)
+	while True:
+
+		game.init()
+
+		try:
+			game.play()
+
+		except Exception as e:
+			print(f"{e}")
+			break
+		else:
+			#print("ELSE STATEMENT")
+			game.return_cards_to_deck()
+			print(f"{game.player}")
+			Game.log("CARDS RETURNED",3)
+		finally:
+			pass
+			#print("FINALLY")
+
+
+	print(f"GAME FINISHED")
+	print(f"{game.player}")
+	print(f"{game.dealer}")
+
+
+game = Game("computer")
 player = game.player
 computer = game.dealer
 deck = game.deck
-
 game_finished = False
-#print(game)
-#game.hit(player)
-while True:
 
-	game.init()
-
-	try:
-		game.play()
-
-	except Exception as e:
-		print(f"{e}")
-		break
-	else:
-		print("ELSE STATEMENT")
-		game.return_cards_to_deck()
-		print(f"{game.deck}")
-		Game.log("CARDS RETURNED",3)
-	finally:
-		print("FINALLY")
-
-print("GAME FINISHED")
+try:
+	game_loop()
+except Exception as e:
+	print(f"*******Error {e}")
+else:
+	print("Next Loop")

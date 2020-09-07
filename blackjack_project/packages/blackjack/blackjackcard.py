@@ -2,6 +2,7 @@ from packages.blackjack.card import Card
 
 class BlackJackCard(Card):
 
+    HOUSERULES = 21
     VALUES = (11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10)
 
     @staticmethod
@@ -17,14 +18,6 @@ class BlackJackCard(Card):
     def build_card_details(card_id_array):
         values = [BlackJackCard.get_card_details(id) for id in card_id_array]
         return tuple(values)
-
-#    @staticmethod
-#    def calc_best_score(card_id_array):
-#        # Get Valuesfrom card_id_array
-#        # and work out nearest score to 21
-#        values = BlackJackCard.build_hand_scores(card_id_array)
-#
-#        return 0
 
     @staticmethod
     def calc_score(card_id_array):
