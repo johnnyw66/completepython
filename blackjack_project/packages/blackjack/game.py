@@ -58,6 +58,8 @@ class Game():
 		player_bet = player.placebet(Game.BET_AMOUNT)
 		dealer_bet = dealer.placebet(player_bet * Game.DEALERBET_FACTOR)
 		gamepot = player_bet + dealer_bet
+		#if (gamepot == 0):
+		#	raise Exception('No Money Left')
 
 		Game.log(f"Starting Hand. Player Bets ${player_bet} Dealer Bets ${dealer_bet}. Game Pot at ${gamepot} ")
 
@@ -87,6 +89,11 @@ class Game():
 		Game.log(f"PLAYER'S POT: ${player.wallet} DEALER'S POT: ${dealer.wallet}")
 		#self.players_go(player,self.calc_score(computer))
 		#self.dealers_go(computer,self.calc_score(player))
+		#wallet_product = player.wallet * dealer.wallet
+		#Game.log(f" Wallets {wallet_product}")
+
+		if (player.wallet * dealer.wallet < 0.01):
+			raise Exception('No Money Left')
 
 		return True
 
@@ -160,7 +167,8 @@ class Game():
 		dealer_hand_details = self.build_card_display(dealer)
 
 		self.display("Player", player_hand_details, self.calc_score(player))
-		self.display("Dealer", dealer_hand_details, self.calc_score(dealer), reveal_all)
+		self.display(f"Dealer reveal all={reveal_all}", dealer_hand_details, self.calc_score(dealer), reveal_all)
+#		self.display(f"Actual Dealer Cards (Debug)", dealer_hand_details, self.calc_score(dealer), True)
 
 	def display_deck(self):
 		deck = self.deck

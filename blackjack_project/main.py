@@ -28,11 +28,21 @@ game_finished = False
 #print(game)
 #game.hit(player)
 while True:
-	game.init()
-	game.play()
-	game.return_cards_to_deck()
-	print(f"{game.deck}")
-	Game.log("CARDS RETURNED",3)
-#while not game_finished:
 
-#	game_finished = game.play()
+	game.init()
+
+	try:
+		game.play()
+
+	except Exception as e:
+		print(f"{e}")
+		break
+	else:
+		print("ELSE STATEMENT")
+		game.return_cards_to_deck()
+		print(f"{game.deck}")
+		Game.log("CARDS RETURNED",3)
+	finally:
+		print("FINALLY")
+
+print("GAME FINISHED")

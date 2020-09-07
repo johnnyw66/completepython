@@ -7,7 +7,7 @@ class Player():
     def __init__(self,name):
         self.name = name
         self.hand = Hand(f"{name}'s Hand'")
-        self.wallet = 100
+        self.wallet = 10
 
     def add(self, cards):
         self.hand.add(cards)
@@ -17,7 +17,7 @@ class Player():
 
     def retrieve_cards(self):
         return self.hand.retrieve_cards()
-        
+
     def last_card(self):
         return self.get_hand()[-1]
 
