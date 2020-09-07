@@ -1,0 +1,16 @@
+	#RANKS = ('Ace','Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King')
+    #SUIT = ('Clubs', 'Spades', 'Hearts', 'Diamonds')
+
+#	@staticmethod
+#    def get_card_id(rank, suit):
+#		return Card.RANKS.index(rank) + 13*Card.SUIT.index(suit)
+
+    def __init__(self, id):
+    #    self.id = id
+    #    self.suit = Card.SUIT[int(id / 13)]
+    #    self.rank = Card.RANKS[id % 13]
+		pass
+
+	def __str__(self):
+		pass
+#        return f"Card id: {self.id} Name: {self.rank} of {self.suit}"
