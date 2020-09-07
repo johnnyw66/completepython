@@ -16,7 +16,7 @@ class Game():
 
 	def log(msg, delay = 3):
 		print(f"{msg}")
-		sleep(3)
+		#sleep(3)
 		#pass
 
 	def __init__(self, player_type = 'player'):
@@ -42,11 +42,10 @@ class Game():
 		#print("Deck Shuffle")
 		self.deck.shuffle()
 
-	def hitxxx(self, player):
-		playerhand = player.hand
-		dealt = self.deck.deal(1)
-		player.add(dealt)
-		#return dealt[-1]
+	#def hit(self, player):
+	#	playerhand = player.hand
+	#	dealt = self.deck.deal(1)
+	#	player.add(dealt)
 
 
 	def play(self):
